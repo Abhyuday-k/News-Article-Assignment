@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24F74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ArticleData" representedClassName="ArticleData" syncable="YES" codeGenerationType="class">
+        <attribute name="approvedBy" optional="YES" attributeType="Transformable"/>
+        <attribute name="article" optional="YES" attributeType="String"/>
+        <attribute name="articleId" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+        <relationship name="authorDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorData" inverseName="article" inverseEntity="AuthorData"/>
+    </entity>
+    <entity name="AuthorData" representedClassName="AuthorData" syncable="YES" codeGenerationType="class">
+        <attribute name="approveCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="articleId" optional="YES" attributeType="String"/>
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <relationship name="article" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArticleData" inverseName="authorDetail" inverseEntity="ArticleData"/>
+    </entity>
+</model>
